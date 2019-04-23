@@ -1,0 +1,54 @@
+#d1{
+			text-align: center;
+			background: url(../img/bg1.jpg);
+		}
+		h1{	
+			margin: 0;
+			padding: 0;
+			padding-top: 10px;
+			font-size: 20px;
+			color: #f0f;
+		}
+		input{
+			height: 40px;width: 500px;
+			margin-top: 15px;
+			margin-bottom: 3px;
+			padding: 0px 10px;
+			border: 0;
+			font-size: 15px;
+			background: rgba(0,0,0,0.5);
+			color: #fff;
+		}
+		span{
+			
+			color: #0ff;
+			height: 20px;
+			display: block;
+		}
+		.login1{
+			width: 524px;height: 50px;
+			cursor: pointer;
+			background-image: linear-gradient(to bottom, #27b1f6 0%, #0aa1ed 100%);
+			color: #fff;
+			margin-bottom: 10px;
+			border:1px solid #0ff  ;
+		}
+		a{
+			text-decoration: none;
+			color: #fff;
+			font-size: 13px;
+		}
+		.c1{
+			position: relative;
+			left: -100px;
+			color: #fff;
+		}
+		.c2{
+			position: relative;
+			right: -100px;
+			color: #fff;
+		}
+		p{
+			color: #fff;
+			font-size: 10px;
+		}

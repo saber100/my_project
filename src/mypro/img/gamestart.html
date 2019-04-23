@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>纵横中文网游戏试玩</title>
+<link href="http://static.zongheng.com/games/css/css.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+*{ padding:0; margin:0;}
+body{overflow-x:hidden;background-color:#000;height:100%; font-family:"宋体";}
+/*public*/
+img{ border:none;}
+a{ text-decoration:none;}
+.clear:before,.clear:after{display:table;content:"";}
+.clear:after{ clear:both;}
+.clear{zoom:1;}
+.fl{ float:left;}
+.fr{ float:right;}
+/*右侧区域*/
+.rightarea{height:100%;overflow:hidden;background-color:#000; position:relative;}
+.rightarea iframe{ overflow:hidden;width:100%;height:100%;background-color:#000;}
+/*提示用户注册*/
+#regisTips{ background-color:#F8F4D4; overflow:hidden; position:relative;width:100%; display:none;}
+#con{ padding-top:25px;}
+.register{ background-color:#f9f9f9; border-top:1px solid #e8c66c; padding:40px 0;position:relative;}
+.register .reg_tit{ text-align:center;}
+.register .reg_tit p{ text-align:center; font-size:13px; color:#000; font-family:"宋体"; line-height:18px;}
+.register .reg_tit p em{ color:#af1e18;}
+.register .reg_tit a{ text-decoration:none;border-radius:1px;}
+.register .reg_tit .reg_sure{ background:#fcc659; font-size:17px; color:#9f0d07; padding:12px 20px;  margin:0 20px;}
+.register .reg_tit .reg_not{ background:#8e979d; font-size:16px; color:#fff; padding:12px 16px;}
+
+.register .reg_tit span{ line-height:30px; }
+.register .reg_t{ color:#9f0d07; font-size:22px; font-family:"微软雅黑"; border-bottom:2px solid #e7c17a; text-align:center; padding-bottom:10px; width:228px;}
+.register .notice{ font-size:13px; color:#787878;border-bottom:2px solid #c8c8c8;padding:0 30px 10px 15px;}
+.register .notice em{ color:#9f0d07;}
+.register .notice .closetips{ background-color:#808990; color:#fff; text-decoration:none; padding:5px 10px; overflow:hidden; border-radius:2px; margin-left:60px; cursor:pointer;}
+</style>
+<script type="text/javascript" src="http://static.zongheng.com/v2013/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="http://static.zongheng.com/games/js/gamelist.js"></script>
+<script type="text/javascript">
+var CookieUtil = {};
+CookieUtil.trim = function(s) {
+	return (s != null ? s.replace(/(^\s*)|(\s*$)/g, "") : "");
+};
+CookieUtil.getCookie = function(name) {
+	var value = null;
+	if (document.cookie && document.cookie != "") {
+		var cookies = document.cookie.split(';');
+		for ( var i = 0; i < cookies.length; i++) {
+			var cookie = this.trim(cookies[i]);
+			if (cookie.substring(0, name.length + 1) == (name + "=")) {
+				value = decodeURIComponent(cookie.substring(name.length + 1));
+				break;
+			}
+		}
+	}
+
+	return value;
+};
+var searchtext = location.search;
+var gamestr = "";
+var gamezone;
+var gameArray;
+if(searchtext.indexOf("?")==-1){
+	window.location.href="http://game.zongheng.com/";
+}else{
+    gameArray = searchtext.substr(1).split("&");
+    for(var i = 0; i < gameArray.length; i++){
+        if(gameArray[i].indexOf("source")!=-1){
+            gamestr = gameArray[i].split("=")[1];
+        }
+        if(gameArray[i].indexOf("zone")!=-1){
+            gamezone = gameArray[i].split("=")[1];
+        }
+    }
+	
+}
+
+</script>
+</head>
+<body>
+<div id="regisTips">
+    <div id="header">
+        <div class="wap">
+            <div id="logo"><a href="http://game.zongheng.com/" target="_blank"><img src="http://static.zongheng.com/games/images/logo.gif" /></a></div>
+            <div id="menu" style="width:450px;">
+                <ul>
+                    <li class="left"></li>
+                    <li><a href="http://game.zongheng.com/" target="_blank">游戏中心首页</a></li>
+                    <li><a href="generalize.html" target="_blank">我的福利</a></li>
+                    <li><a href="http://bbs.zongheng.com/index.php?gid=99" target="_blank">论坛</a></li>
+                    <li><a href="uservip.html" style="font-weight:bold; color:#AF1E18;" target="_blank">用户中心</a><em class="news"></em></li>
+                    <li id="allgame"><a href="uservip.html" target="_blank" style="font-weight:bold; color:#fff;">游戏官网</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="con">
+        <div class="register">
+            <div class="reg_tit">
+                <p>暂不支持绑定原有纵横账号，请<em>注册新纵横账号</em>后继续游戏，或登录原有账号后重新开始游戏<a href="##" target="_blank" class="reg_sure">注册纵横账号</a><a href="javascript:;" class="reg_not">暂不注册</a></p>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<div class="rightarea" id="rightarea">
+    <iframe id="gamelink" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+</div>
+
+<script type="text/javascript">
+<!--
+$(function (){
+	var gameindex="http://game.zongheng.com/"+gamestr+"/index";
+	$("#allgame").find("a").attr("href",gameindex);
+	var zm_gameindex=encodeURIComponent(gameindex);
+	var gamelast="http://game.zongheng.com/bindGameAnonymousUser.do?backUrl="
+	var zm_gamelast=encodeURIComponent(gamelast+zm_gameindex);
+	var jump="http://passport.zongheng.com/reg.do?location="+zm_gamelast;
+	$("#con").find(".reg_sure").attr("href",jump);
+	if(gamestr == "sxd"){
+		$("#gamelink").css("background-color","#fff");
+	}
+	var Regist=$("#regisTips");
+	var iFrame=$("#gamelink");
+	var moveH=Regist.height();
+	var FrameH=$(window).height();
+	var FrameW=$(window).width();
+	iFrame.css("height",FrameH);
+	Regist.css("height",0);
+	iFrame.attr("src","http://game.zongheng.com/" + gamestr + "/" + gamezone + "/startX");
+    window.onresize = function(){
+        iFrame.css("height",document.documentElement.clientHeight+"px");
+    };
+	
+	for(var i=0;i<gamelist.length;i++){
+		if(gamestr==gamelist[i][0]){
+			document.title = "纵横中文网《" + gamelist[i][2] +"》" + gamezone +"区";
+		}
+	}
+	
+	/*提醒注册*/
+	var registime=600000;//10分钟提醒一次
+	var regisTimmer=null;
+	if(CookieUtil.getCookie("logon")==null){//用户未登录
+	
+		regisTimmer=setTimeout(judjeLogon,registime);
+	}
+	Regist.find(".register").find("p").children("a").click(function (){
+		Regist.animate({"height":0},500,function(){
+			Regist.hide();
+		});
+		iFrame.css({"height":FrameH});
+		clearTimeout(regisTimmer);
+		regisTimmer=setTimeout(judjeLogon,registime);
+	})
+
+	function judjeLogon(){
+		if(CookieUtil.getCookie("logon")==null && CookieUtil.getCookie("zh_game_anonymous")!=null){
+			if(Regist.css("display")=="none"){
+				Regist.animate({"height":moveH},800,function (){
+					Regist.show();
+				});
+			}
+			setTimeout(judjeLogon,registime);			
+		}
+		else{
+			Regist.animate({"height":0},500,function(){
+				Regist.hide();
+			});
+			iFrame.css({"height":FrameH});
+			clearTimeout(regisTimmer);
+		}
+	}
+	
+})
+
+</script>
+<div style="display:none">
+    <script type="text/javascript" src="http://static.zongheng.com/v2_0/js/tongji.js"></script>
+</div>
+</body>
+</html>

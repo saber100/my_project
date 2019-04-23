@@ -1,0 +1,812 @@
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		a {
+			text-decoration: none;
+			color: #000;
+		}
+		.biaoji a:hover{
+			color: #d32f2f;
+		}
+		.tipian {
+			background-image: url(../img/search.png);
+			width: 40px;
+			height: 34px;
+			display: inline-block;
+		}
+		#body {
+			margin: 0 auto;
+			width: 1200px;
+		}
+
+		#head {
+			padding: 20px 0;
+			position: fixed;
+			box-sizing: border-box;
+			width: 1200px;
+			background-color: #fff;
+			z-index: 1;
+		}
+
+		#foot {
+			text-align: center;
+		}
+
+		p {
+			color: #000;
+			font-size: 10px;
+		}
+
+		img.biaozi {
+			width: 167px;
+			height: 34px;
+			line-height: 32px;
+		}
+
+		.search {
+			border: 1px solid #000;
+			box-sizing: border-box;
+			padding-left: 15px;
+			width: 298px;
+			height: 34px;
+			line-height: 32px;
+			margin-left: 150px;
+			float: left;
+
+		}
+
+		#head .head-item {
+			display: inline-block;
+		}
+
+		#head .action-wrap {
+			float: right;
+			line-height: 34px;
+		}
+
+		#head .action-wrap a {
+			margin-right: 10px;
+		}
+
+		#content {
+			padding-top: 80px;
+		}
+
+		.navigation a {
+			margin-left: 5%;
+			font-size: 20px;
+			font-weight: bold;
+			color: #000;
+		}
+		.tabulation li a:hover{
+			color: #e84848;
+		}
+		.gengduo {
+			font-size: 12px;
+			color: #999999;
+		}
+
+		.navigation div {
+			border-bottom: 2px solid #e0e0e0;
+			margin-bottom: 5px;
+			padding-bottom: 2px;
+
+		}
+
+		.navigation {
+			margin-bottom: 20px;
+		}
+
+		.navigation a:hover {
+			color: #f00;
+			border-bottom: 2px solid #f00;
+		}
+
+		.classify {
+			width: 234px;
+			height: 303px;
+			background: #f2f2f2;
+			box-sizing: border-box;
+			padding: 5px;
+			float: left;
+		}
+
+		.classify h3 {
+			margin: 5px 10px;
+			margin-bottom: 30px;
+			color: #a9aeb7;
+		}
+
+		ul {
+			list-style-type: none;
+		}
+
+		.tabulation li a {
+			display: inline-block;
+			margin-left: 10px;
+			margin-bottom: 26px;
+			font-size: 14px;
+			color: #333;
+			letter-spacing: 1px;
+			text-decoration: none;
+			padding-left: 20px;
+		}
+
+		.rotation-chart {
+			float: left;
+			margin-left: 5px;
+			position: relative;
+			width: 718px;
+			height: 303px;
+		}
+		/* 轮播图 */
+		* {
+			margin:0;
+			padding:0;
+		}
+		#wrap {
+			position:relative;
+			margin:0 auto;
+			width:718px;
+			height:313px;
+		}
+		#wrap .banner {
+			position:absolute;
+			top:0;
+			width:100%;
+			height:100%;
+			opacity:0;
+			transition: opacity 2s;
+		}
+		#wrap .tab{
+			position:absolute;
+			bottom:10px;
+			right:10px;
+		}
+		#wrap .tab span{
+			display: inline-block;
+			width:6px;
+			height:6px;
+			margin:3px;
+			background:rgba(105,105,105,0.5);
+			border-radius:50%;
+			cursor: pointer;
+			border:2px solid #887B6E;
+		}
+		#wrap .tab span.on{
+			background:#E2CEB7;
+		}
+		#wrap .tab span:hover{
+			background:#E2CEB7;
+		}
+		#wrap .prev {
+			position:absolute;
+			left:20px;
+			top:210px;
+			width:41px;
+			height:69px;
+			background: url("images/icon-slides.png") 82px;
+			cursor:pointer;
+		}
+		#wrap .prev:hover{
+			background: url("images/icon-slides.png");
+		} 
+		#wrap .next {
+			position:absolute;
+			right:20px;
+			top:210px;
+			width:41px;
+			height:69px;
+			background: url("images/icon-slides.png") 41px;
+			cursor:pointer;
+		}
+		#wrap .next:hover{
+			background: url("images/icon-slides.png") 123px;
+		}
+		.banner-img>span{
+			width: 718px;height: 38px;
+			display: block;
+			position:absolute;
+		 	padding-left:10px;
+			top: 265px;
+			box-sizing: border-box;
+			line-height: 38px;
+			color: #fff;
+			background: rgba(51,51,51.7);
+		}
+		.scrtxt {
+			width: 718px;
+			height: 38px;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			background: rgba(51, 51, 51, .7);
+			color: #fff;
+			line-height: 38px;
+			text-indent: 20px;
+			font-size: 14px;
+			letter-spacing: 1px;
+		}
+
+		.wrap {
+			float: left;
+		}
+
+		.monthly-ticket {
+			float: left;
+			width: 236px;
+			height: 386px;
+			border: 1px solid #f0f0f0;
+		}
+
+		.gengduo {
+			float: right;
+			margin-top: 5px;
+		}
+
+		.f1 {
+			float: left;
+			margin-top: 5px;
+			margin-left: 5px;
+		}
+
+		.f2 {
+			border: 2px solid #fff;
+			clear: both;
+		}
+
+		.right {
+			float: right;
+		}
+
+		.month-ticket-rank-list {
+			padding: 5px;
+		}
+
+		.month-ticket-rank-list>li>span {
+			float: right;
+			font-size: 12px;
+			color: #999;
+			line-height: 32px;
+		}
+
+		.month-ticket-rank-list>li {
+			border-bottom: 1px dotted #ccc;
+			padding-bottom: 3px;
+		}
+
+		.top1 {
+			display: inline-block;
+			width: 16px;
+			background: #d32f2f;
+			color: #fff;
+			margin: 8px 9px 0 0;
+			text-align: center;
+		}
+
+		em {
+			font-style: normal;
+		}
+
+		.top2 {
+			display: inline-block;
+			width: 16px;
+			background: #fc7403;
+			color: #fff;
+			margin: 8px 9px 0 0;
+			text-align: center;
+		}
+
+		.top3 {
+			display: inline-block;
+			width: 16px;
+			background: #f8cc1c;
+			color: #fff;
+			margin: 8px 9px 0 0;
+			text-align: center;
+		}
+
+		.top4,
+		.top5,
+		.top6,
+		.top7,
+		.top8,
+		.top9,
+		.top10 {
+			display: inline-block;
+			width: 16px;
+			color: #a9aeb7;
+			margin: 8px 9px 0 0;
+			text-align: center;
+		}
+
+		.li:hover {
+			color: #e84848;
+			border-color: #edacac;
+		}
+
+		.month-ticket-rank-list>.tan {
+			border: 0px;
+		}
+
+		.left-news {
+			width: 234px;
+			height: 214px;
+			color: #a9aeb7;
+			margin-top: 5px;
+			background: #fafafa;
+			padding: 5px;
+			float: left;
+			box-sizing: border-box;
+		}
+
+		.left-news a {
+			display: inline-block;
+			color: #333;
+			margin: 10px 5px;
+			box-sizing: border-box
+		}
+
+		.mids {
+			display: inline;
+			margin-left: 5px;
+			font-size: 16px;
+			margin-right: 10px;
+		}
+
+		.mids>h4 {
+			color: #a11313;
+			margin-left: 13px;
+		}
+
+		.mids>h4:hover {
+			color: red;
+		}
+
+		.kong {
+			clear: both;
+		}
+
+		.left {
+			float: left;
+			width: 957px;
+		}
+		.news-lists li a:hover{
+			color: #e84848;
+		}
+
+
+		.cate {
+			font-size: 12px;
+			color: #999999;
+			line-height: 12px;
+			margin-right: 4px;
+			margin-top: -2px;
+			clear: both;
+		}
+
+		#substance {
+			overflow: hidden;
+		}
+
+		.miaos {
+			float: left;
+			border: 1px solid #f0f0f0;
+			width: 718px;
+			height: 214px;
+			padding: 17px 7px 14px 21px;
+			box-sizing: border-box;
+			margin: 5px 0 0 5px;
+			color: #a11313;
+		}
+
+		.top-news {
+			font-weight: 700;
+			padding-bottom: 8px;
+			line-height: 21px;
+			width: 330px;
+			color: #a11313;
+			font-size: 16px;
+			letter-spacing: 2px
+		}
+
+		.top-news:hover {
+			color: red;
+		}
+
+		.top-news.top {
+			margin-left: 5px;
+			margin-right: 60px;
+		}
+
+		.biaoji>span {
+			color: #999999;
+		}
+
+		.biaoji>a {
+			font-size: 14px;
+			color: #333;
+			margin-right: 63px;
+			display: inline-block;
+			margin-top: 13px;
+		}
+
+		.tebiao {
+			margin-left: 14px;
+		}
+
+		.game-zone {
+			height: 131px;
+			border: 1px solid #f0f0f0;
+			clear: both;
+			box-sizing: border-box;
+			margin: 5px 0 0 5px;
+			margin-top: 5pk;
+			padding-left: 5px;
+		}
+
+		.game-zone>a {
+			display: block;
+			line-height: 24px;
+		}
+
+		.game-zone>.haha {
+			display: inline-block;
+			padding-top: 10px;
+			color: #333;
+			z-index: 5;
+			font-size: 16px;
+			margin-bottom: 10px;
+
+		}
+
+		.game-zone>img {
+			float: right;
+		}
+
+		.oo {
+			clear: both;
+			color: #e84848;
+		}
+
+		.yy {
+			color: #333333;
+		}
+
+		/* �ڶ������ */
+		.guanggao {
+			margin: 30px 0;
+		}
+
+		.top-title-left {
+			width: 236px;
+			height: 551px;
+			float: left;
+		}
+
+		.top-title-conter {
+			width: 686px;
+			height: 551px;
+			float: left;
+			margin: 0px 18px;
+		}
+
+		.top-title-right {
+			width: 236px;
+			height: 551px;
+			float: left;
+		}
+
+		.overbook>div>img {
+			width: 100px;
+			height: 132px;
+			margin: 0 auto;
+			display: block;
+			padding-top: 50px;
+		}
+
+		.clearfix {
+			line-height: 40px;
+			border-bottom: 1px solid #e6e6e6;
+		}
+
+		.clearfix>div {
+			font-size: 18px;
+			font-weight: bold;
+			color: #333;
+			width: 76px;
+			height: 40px;
+			display: inline-block;
+		}
+
+		.clearfix>a {
+			float: right;
+			font-size: 12px;
+			color: #999;
+			padding-right: 8px;
+		}
+
+		.overbook>div {
+			width: 234px;
+			height: 200px;
+		}
+
+		.bname {
+			display: block;
+			text-align: center;
+			margin-top: 10px;
+			font-size: 18px;
+			color: #333333;
+			padding: 0 30px;
+		}
+
+		.author {
+			display: block;
+			text-align: center;
+			margin-top: 10px;
+			color: #666;
+			font-size: 13px;
+			margin-bottom: 10px;
+		}
+
+		.bname:hover,
+		.author:hover,
+		.haha:hover {
+			color: #e84848;
+			border-color: #edacac;
+		}
+
+		.overbook>p {
+			text-align: center;
+			font-size: 12px;
+			width: 234px;
+			height: 29.6px;
+		}
+
+		.overbook {
+			background: #fafafa;
+			height: 508px;
+			width: 234px;
+		}
+
+		.overbook>span {
+			color: #666;
+			font-size: 13px;
+			height: 72px;
+			line-height: 24px;
+			padding: 0 20px;
+			display: block;
+		}
+
+		.read {
+			width: 115px;
+			height: 30px;
+			display: block;
+			background: #d32f2f;
+			font-size: 14px;
+			border-radius: 2px;
+			color: #fff;
+			text-align: center;
+			margin: 35px auto 0 auto;
+			border: 0px;
+		}
+
+		.read:hover {
+			cursor: pointer;
+			background: #e84848;
+		}
+
+		/* �ڶ����м� */
+		.title-f1 {
+			width: 686px;
+			height: 41px;
+			color: #333333;
+			font-size: 18px;
+			border-bottom: 1px solid #e6e6e6;
+			display: inline-block;
+			box-sizing: border-box;
+			font-weight: bold;
+			line-height: 40px;
+		}
+
+		.mind-showbook {
+			width: 686px;
+			height: 504px;
+		}
+
+		.mind-book1,
+		.mind-book3,
+		.mind-book5 {
+			width: 332px;
+			height: 128px;
+			color: #333333;
+			margin: 30px 0 0 10px;
+			float: left;
+			box-sizing: border-box;
+
+		}
+
+		.mind-book2,
+		.mind-book4,
+		.mind-book6 {
+			width: 332;
+			height: 128px;
+			color: #333333;
+			margin: 30px 0 0 10px;
+			float: right;
+		}
+
+		.book {
+			float: left;
+			margin-left: 10px;
+			position: relative;
+		}
+
+		.tuss {
+			width: 95px;
+			height: 126px;
+			float: left;
+			border-radius: 4px;
+		}
+
+		.info {
+			color: #666666;
+			font-size: 13px;
+			line-height: 24px;
+			width: 222px;
+			height: 72px;
+		}
+
+		.bookname>a {
+			color: #333333;
+			font-size: 16px;
+		}
+
+		.book>a {
+			font-size: 13px;
+			color: #999;
+		}
+
+		.cates {
+			display: inline-block;
+			width: 64px;
+			line-height: 20px;
+			padding: 0 6px;
+			border: 1px solid #e6e6e6;
+			border-radius: 2px;
+			color: #999;
+			margin-left: 80px;
+			position: absolute;
+			top: 95px;
+			left: 50px;
+		}
+
+		.bookname>a:hover {
+			color: #e84848;
+			border-color: #edacac;
+		}
+
+		.book>a:hover {
+			color: #e84848;
+			border-color: #edacac;
+		}
+
+		/* �ڶ����ұ� */
+		.top11,
+		.top12,
+		.top13,
+		.top14,
+		.top15 {
+			display: inline-block;
+			width: 16px;
+			color: #a9aeb7;
+			margin: 8px 9px 0 0;
+			text-align: center;
+		}
+
+		.top15 {
+			border-bottom: 0;
+		}
+
+		/* �������� */
+		.na2 {
+			height: 479px;
+
+		}
+
+		.tou {
+			width: 260px;
+			height: 20px;
+			font-size: 16px;
+		}
+
+		.tab-lists {
+
+			width: 296px;
+			height: 479px;
+			float: left;
+			margin-left: 4px;
+			padding: 15px 17px 10px;
+			box-sizing: border-box;
+			background: #f2f2f2;
+		}
+
+		.tuu {
+			width: 67px;
+			height: 88px;
+			float: right;
+			border-radius: 5px;
+		}
+
+		.f1>.hl {
+			font-size: 16px;
+			display: inline-block;
+			text-align: center;
+			font-weight: bolder;
+		}
+
+		.list-b {
+			width: 260px;
+			height: 120px;
+			padding: 16px 0 15px;
+			box-sizing: border-box;
+		}
+
+		.wenzi {
+			float: left;
+			clear: both;
+		}
+
+		.wenzi>.li {
+			display: inline-block;
+			font-size: 16px;
+		}
+
+		.wenzi>a {
+			display: block;
+			margin: 0 auto;
+		}
+
+		.h1 {
+			width: 260px;
+			height: 9px;
+			border-bottom: 1px solid #ccc;
+			margin: 0 auto;
+			clear: both;
+		}
+
+		.tab-lists>.month-ticket-rank-list {
+			padding: 0 !important;
+		}
+
+		.xiao,
+		.zhong,
+		.zishu {
+			padding-top: 7px;
+			padding-left: 30px;
+		}
+
+		.xiao {
+			font-size: 12px;
+			color: #999999;
+		}
+
+		.zhong {
+			font-size: 14px;
+			color: #999999;
+		}
+
+		.zishu {
+			font-size: 13px;
+		}
+
+		.xiao:hover,
+		.zhong:hover {
+			color: #e84848;
+		}
+		/* 脚部 */
+		#foot p{
+			font-size: 14px;
+		}

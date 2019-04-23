@@ -1,0 +1,198 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>用户注册</title>
+	<link rel="stylesheet" href="css/register.css">
+	<link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+	<div id="d1">
+		<h1>新用户注册</h1>
+		<div>
+			<input type="text" id="uname" onblur="uname_blur()" onfocus="uname_focus()" placeholder="请输入用户名">
+			<br>
+			<span id="s1"></span>
+			
+		</div>
+		<div>
+			<input type="password" id="upwd" onblur="upwd_blur()" onfocus="upwd_focus()"placeholder="请输入密码">
+			<br>
+			<span id="s2"></span>
+		</div>
+		<div>
+			<input type="password" id="upwds" onblur="upwds_blur()" onfocus="upwds_focus()"placeholder="请确认密码">
+			<br>
+			<span id="s3"></span>
+		</div>
+		<div>
+			<input type="text" id="email" onblur="email_blur()" onfocus="email_focus()" placeholder="请输入邮箱">
+			<br>
+			<span id="s4"></span>
+		</div>
+		<div>
+			<input type="text" id="phone" onblur="phone_blur()" onfocus="phone_focus() "placeholder="请输入手机号码">
+			<br>
+			<span id="s5"></span>
+		</div>
+		<button onclick="register()" class="login1">提交注册信息</button><br>
+		<a href="http://127.0.0.1:8080/login.html" class="c1">用户登陆</a>  |  <a href="#" class="c2">其他登陆</a>
+		<p>
+			<span>Copyright © 2002-2019 www.qidian.com All Rights Reserved</span>
+			版权所有 上海玄霆娱乐信息科技有限公司
+		</p>
+		<p>
+			上海玄霆娱乐信息科技有限公司<a href="#">增值电信业务经营许可证沪B2-20080046</a>出版经营许可证 新出发沪批字第U3718号 沪网文[2015]0081-031 新出网证（沪）字010沪ICP备08017520号-1
+		</p>
+		<p>
+			请所有作者发布作品时务必遵守国家互联网信息管理办法规定，我们拒绝任何色情小说，一经发现，即作删除！举报电话：010-59357051
+		</p>
+		<p>
+			本站所收录的作品、社区话题、用户评论、用户上传内容或图片等均属用户个人行为。如前述内容侵害您的权益，欢迎举报投诉，一经核实，立即删除，本站不承担任何责任
+		</p>
+		<p>
+			联系方式 总机 021-61870500 地址：中国（上海）自由贸易试验区碧波路690号6号楼101、201室
+		</p>
+		<div>
+			<img src="img/footer_img1.png" alt="找不到图片">
+			<img src="img/footer_img2.png" alt="找不到图片">
+			<img src="img/footer_img3.png" alt="找不到图片">
+			<img src="img/footer_img4.png" alt="找不到图片">
+			<img src="img/footer_img5.png" alt="找不到图片">
+			<img src="img/footer_img6.png" alt="找不到图片">
+		</div>
+		<div class="modal-shadow" id="j_modal">
+			<div class="modal-wrap">
+				<!-- <div class="modal-header">
+					<h4>系统提示</h4>
+					<div class="close">&times;</div>
+				</div> -->
+				<div class="modal-body">
+					<span id="j-sec">3</span> s钟后跳转
+				</div>
+				<!-- <div class="modal-footer">
+					<button>确定</button>
+				</div> -->
+			</div>
+		</div>
+	<script>
+		//用户名
+		function uname_blur(){
+			var xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4&&xhr.status==200){
+					var result=xhr.responseText;
+					if(uname.value==""){
+						s1.innerHTML="用户名不能为空";
+					}else if(result.length==2){
+						s1.innerHTML="用户名可以使用"
+					}else {
+						s1.innerHTML="用户名已被占用"
+					}
+				}
+			}
+			xhr.open("get","/user/regster?uname="+uname.value,true);
+			xhr.send(null);
+			
+		}
+		function uname_focus(){
+			s1.innerHTML="用户名长度在3~9位之间";
+		}
+		//密码
+		function upwd_blur(){
+			if(upwd.value==""){
+				s2.innerHTML="密码不能为空"
+			}else if(upwd.value.length<6){
+				s2.innerHTML="密码不能少于6位";
+			}else if(upwd.value.length>12){
+				s2.innerHTML="密码不能多于12位";
+			}else{ s2.innerHTML="密码格式正确"}
+		
+		}
+		function upwd_focus(){
+			s2.innerHTML="密码长度在6~12位之间";
+		}
+		//确认密码
+		function upwds_blur(){
+			if(upwds.value==""){
+				s3.innerHTML="密码不能为空"
+			}else if(upwds.value.length<6){
+				s3.innerHTML="密码不能少于6位";
+			}else if(upwds.value.length>12){
+				s3.innerHTML="密码不能多于12位";
+			}else if(upwds.value!==upwd.value){
+				s3.innerHTML="两次密码输入不同";		
+			}else{ s3.innerHTML="密码格式正确"}
+		}
+		function upwds_focus(){
+				s3.innerHTML="密码长度在6~12位之间";
+			}
+		
+		//验证邮箱
+		function email_blur(){
+			if(email.value==""){
+				s4.innerHTML="邮箱不能为空"
+			}else {
+				s4.innerHTML="邮箱可以使用"
+			}
+		}
+		function email_focus(){
+			s4.innerHTML="请输入合法邮箱地址"
+		}
+		//验证手机
+		function phone_blur(){
+			if(phone.value==""){
+				s5.innerHTML="手机号不能为空"
+			}else if(phone.value.length>11){
+				s5.innerHTML="手机号不能多于11位";
+			}else if(phone.value.length<11){
+				s5.innerHTML="手机号不能少于11位";
+			}else{
+				s5.innerHTML="手机号可以使用";
+			}
+		}
+		function phone_focus(){
+			s5.innerHTML="请输入合法手机号"
+		}
+		//响应
+		function register(){
+			var xhr=new XMLHttpRequest();
+			console.log(xhr);
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4&&xhr.status==200){
+					var result=JSON.parse(xhr.responseText);
+					if(result==1){
+						
+						var sec = 3;
+						timesJump(sec);
+					}else {
+						alert("注册失败")
+					}
+					function timesJump(sec) {
+						var secSpan = document.getElementById('j-sec');
+						var modal = document.getElementById('j_modal');
+						modal.style.display = 'block';
+						secSpan.innerText = sec;
+
+						var secTimer = setInterval(function(){
+							sec--;
+							secSpan.innerText = sec;
+							if(sec == 0){
+								clearInterval(secTimer);
+								modal.style.display = 'none';
+								window.open('login.html');
+							}
+						}, 1000);
+					}	
+					
+				}
+			}
+			xhr.open("post","/user/regsters",true);
+			xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+			var formdata="uname="+uname.value+"&upwd="+upwd.value+"&email="+email.value+"&phone="+phone.value;
+			xhr.send(formdata);
+		}
+	</script>
+  </div>
+</body>
+</html>

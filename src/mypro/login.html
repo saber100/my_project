@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>用户登陆</title>
+	<link rel="stylesheet" href="css/login.css">
+	<link rel="stylesheet" href="css/modal.css">
+</head>
+<body >
+	<div id="d1">
+		<p class="head"><img src="img/logo.png" alt="看不见图片"></p>
+	</div>
+	<div id="fo">
+		<div id="d2">
+			<img src="img/enterzh.jpg" alt="看不见图片">
+		</div>
+		<div id="d3">
+			<h3>用户账户登陆</h3>
+			<input type="text" id="uname" class="unames" placeholder="请输入用户名称">
+			<div id="d4"></div>
+			<input type="password" id="upwd" class="upwds" placeholder="请输入用户密码">
+			<div id="d5"></div>
+			<input type="checkbox" id="auto"><label for="auto">自动登录</label>
+			<a href="#" class="algin-right">忘记密码</a>
+			<button class="login" onclick="login()">登录</button>
+			<div>
+				<a href="#">手机号码登陆</a>
+				<a href="http://127.0.0.1:8080/register.html">新用户注册</a>
+			</div>
+			<div class="modal-shadow" id="j_modal">
+				<div class="modal-wrap">
+					<!-- <div class="modal-header">
+						<h4>系统提示</h4>
+						<div class="close">&times;</div>
+					</div> -->
+					<div class="modal-body">
+						<span id="j-sec">3</span> s钟后跳转
+					</div>
+					<!-- <div class="modal-footer">
+						<button>确定</button>
+					</div> -->
+				</div>
+			</div>
+			<script>
+				function login(){
+					var xhr=new XMLHttpRequest();
+					xhr.onreadystatechange=function(){
+						console.log(xhr.readyState);
+						if(xhr.readyState==4&&xhr.status==200){
+							var result=xhr.responseText;
+							if(result==1){
+								var sec = 3;
+								timesJump(sec);
+							}else {
+								alert("用户名密码错误")
+							}
+							function timesJump(sec) {
+								var secSpan = document.getElementById('j-sec');
+								var modal = document.getElementById('j_modal');
+								modal.style.display = 'block';
+								secSpan.innerText = sec;
+
+								var secTimer = setInterval(function(){
+									sec--;
+									secSpan.innerText = sec;
+									if(sec == 0){
+										clearInterval(secTimer);
+										modal.style.display = 'none';
+										window.open('/principal.html?name='+uname.value,'_self');
+									}
+								}, 1000);
+							}
+						}
+					}
+					xhr.open("post","/user/login",true);
+					xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+					var formdata="uname="+uname.value+"&upwd="+upwd.value;
+					console.log(formdata)
+					xhr.send(formdata);
+				}
+		
+			</script>
+		</div>
+	</div>
+</body>
+</html>
