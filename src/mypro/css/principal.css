@@ -183,27 +183,27 @@
 		}
 		#wrap .prev {
 			position:absolute;
-			left:20px;
-			top:210px;
+			left:0;
+			top:110px;
 			width:41px;
 			height:69px;
-			background: url("images/icon-slides.png") 82px;
+			background: url("../img/a20190425202330.png") 50% no-repeat rgba(105,105,105,0.5);
 			cursor:pointer;
 		}
 		#wrap .prev:hover{
-			background: url("images/icon-slides.png");
+			background: url("../img/a20190425202330.png") 50% no-repeat rgba(105,105,105,0.5);
 		} 
 		#wrap .next {
 			position:absolute;
-			right:20px;
-			top:210px;
+			right:0;
+			top:110px;
 			width:41px;
 			height:69px;
-			background: url("images/icon-slides.png") 41px;
+			background: url("../img/a20190425202355.png") 50% no-repeat rgba(105,105,105,0.5);
 			cursor:pointer;
 		}
 		#wrap .next:hover{
-			background: url("images/icon-slides.png") 123px;
+			background: url("../img/a20190425202355.png") 50% no-repeat rgba(105,105,105,0.5) ;
 		}
 		.banner-img>span{
 			width: 718px;height: 38px;
