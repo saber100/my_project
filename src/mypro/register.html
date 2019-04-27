@@ -100,6 +100,7 @@
 		}
 		//密码
 		function upwd_blur(){
+			var rep=/[a-zA-z0-9]{6,13}/
 			if(upwd.value==""){
 				s2.innerHTML="密码不能为空"
 			}else if(upwd.value.length<6){
